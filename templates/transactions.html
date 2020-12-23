@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+  Transactions
+{% endblock title %}
+
+{% block body %}
+<h2><b>All Transactions</b></h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.no.</th>
+        <th scope="col">Transaction from</th>
+        <th scope="col">Transaction to</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    {%for transaction in transactions%}
+
+    <tbody>
+      <tr>
+        <td>{{transaction.id}}</td>
+        <td>{{transaction.trans_from}}</td>
+        <td>{{transaction.trans_to}}</td>
+        <td>{{transaction.amount}}</td>
+        <td>{{transaction.date}}</td>
+      </tr>
+      {%endfor%}
+  </table>
+{% endblock body %}
+
+    

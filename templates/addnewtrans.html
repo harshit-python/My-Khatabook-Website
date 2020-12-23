@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Add New Transaction
+{% endblock title %}
+    
+
+{% block body %}
+<h2><b>Add New Transaction</b></h2>
+<form action="addnewtrans" method="POST">
+    {% csrf_token %}
+    <input type="text" name="trans_from" placeholder="Transaction From"><br>
+    <input type="text" name="trans_to" placeholder="Transaction To"><br>
+    <input type="integer" name="amount" placeholder="Amount"><br>
+    <input type="datetime" name="date" placeholder="Date"><br>
+    <input type="submit">
+{% endblock body %}
